@@ -14,27 +14,27 @@ let target = {
 }
 
 let items = {
-  shield: { name: 'Shield', modifier: .2, description: 'It protects!' },
-  bat: { name: 'Bat', modifier: 2, description: 'Bonk!' },
-  fire: { name: 'Fire', modifier: 3, description: 'IT BURNS!' }
+  stick: { name: 'Stick', modifier: 1, description: 'It pokes!' },
+  bat: { name: 'Bat', modifier: 3, description: 'Bonk!' },
+  fire: { name: 'Fire', modifier: 5, description: 'IT BURNS!' }
 }
 
 function slap() {
-  target.playerHealth -= Math.trunc(1 * addMods())
+  target.playerHealth -= 1 + addMods()
   target.numberOfHits++
   update()
   return;
 }
 
 function punch() {
-  target.playerHealth -= Math.trunc(5 * addMods())
+  target.playerHealth -= 5 + addMods()
   target.numberOfHits++
   update()
   return;
 }
 
 function kick() {
-  target.playerHealth -= Math.trunc(10 * addMods())
+  target.playerHealth -= 10 + addMods()
   target.numberOfHits++
   update()
   return;
@@ -44,8 +44,8 @@ function kick() {
 
 // }
 
-function giveShield() {
-  target.items.push(items.shield)
+function giveStick() {
+  target.items.push(items.stick)
   return;
 }
 
@@ -62,20 +62,8 @@ function giveFire() {
 function addMods() {
   let modifier = 0;
   for (let i = 0; i < target.items.length; i++) {
-    if (target.items[i].name == 'Fire') {
-      modifier += target.items[i].modifier;
-    }
-    if (target.items[i].name == 'Bat') {
-      modifier += target.items[i].modifier;
-    }
-    if (modifier == 0) {
-      ++modifier;
-    }
-    if (target.items[i].name == 'Shield') {
-      modifier *= 0.2;
-    }
+    modifier += target.items[i].modifier
   }
-  debugger
   return modifier;
 }
 
