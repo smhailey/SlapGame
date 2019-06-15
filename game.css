@@ -1,1 +1,7 @@
 /*Only use this file if you want to override bootstrap or create your own style*/
+.top-bg {
+  background-image: url('http://www.ahmproduction.com/wp-content/uploads/2016/05/Gray-Comb-Texture.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
