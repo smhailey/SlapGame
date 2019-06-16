@@ -9,37 +9,42 @@
 	<link rel="stylesheet" href="game.css">
 </head>
 
-
-
-
-
 <body class="bg-dark text-light">
 	<header>
-		<h1>Name: <span id="name"></span>Herbert</h1>
-		<h2>Health: <span id="health"></span></h2>
-		<h2>Hits: <span id="hits"></span></h2>
+		<h1 class="text-center">Name: <span id="name"></span>Herbert</h1>
+		<h2 class="text-center">Health: <span id="health"></span></h2>
+		<h2 class="text-center">Hits: <span id="hits"></span></h2>
 	</header>
-	<div class="container-flex top-bg">
-		<div class="row">
-			<div class="col-3 d-flex justify-content-center flex-column">
-				<img src="https://cdn.pixabay.com/photo/2014/04/02/17/02/man-307730_960_720.png" width="200">
+	<div class="container-fluid top-bg">
+		<div class="row justify-content-center">
+			<div class="col-7 text-center">
+				<!-- <div class="col-4 d-flex justify-content-center align-self-center flex-column"> -->
+				<img class="p-3" src="https://cdn.pixabay.com/photo/2014/04/02/17/02/man-307730_960_720.png" width="200">
 				<!-- www.pixum.com/200 -->
 			</div>
 		</div>
 	</div>
 
 	<footer>
-		<a href="#" class="btn btn-danger rounded-pill mb-2" onClick="slap()">Slap! (1 dmg)</a>
-		<a href="#" class="btn btn-danger rounded-pill mb-2" onClick="punch()">Punch! (5 dmg)</a>
-		<a href="#" class="btn btn-danger rounded-pill mb-2" onClick="kick()">Kick! (10 dmg)</a>
-		<br>
-		<a href="#" class="btn btn-warning rounded-pill" onClick="giveStick(); this.onclick=null;">Stick (+1 dmg)</a>
-		<a href="#" class="btn btn-warning rounded-pill" onClick="giveBat(); this.onclick=null;">Bat (+3 dmg)</a>
-		<a href="#" class="btn btn-warning rounded-pill" onClick="giveFire(); this.onclick=null;">Fire (+5 dmg)</a>
-		<h4>Can only choose 1 of each weapon</h4>
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div class="col-7 text-center">
+					<a href="#" class="btn btn-danger rounded-pill mb-2 text-center" onClick="slap()">Slap! (1 dmg)</a>
+					<a href="#" class="btn btn-danger rounded-pill mb-2 text-center" onClick="punch()">Punch! (5 dmg)</a>
+					<a href="#" class="btn btn-danger rounded-pill mb-2 text-center" onClick="kick()">Kick! (10 dmg)</a>
+					<a href="#" class="btn btn-warning rounded-pill text-center" onClick="giveStick(); this.onclick=null;">Stick
+						(+1
+						dmg)</a>
+					<a href="#" class="btn btn-warning rounded-pill text-center" onClick="giveBat(); this.onclick=null;">Bat (+3
+						dmg)</a>
+					<a href="#" class="btn btn-warning rounded-pill text-center" onClick="giveFire(); this.onclick=null;">Fire (+5
+						dmg)</a>
+					<h4>Can only choose 1 of each weapon</h4>
+				</div>
+			</div>
+		</div>
+
 	</footer>
-
-
 
 	<script src="game.js"></script>
 </body>
