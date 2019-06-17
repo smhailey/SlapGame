@@ -2,6 +2,7 @@ let playerName = 'Herbert';
 let healthStatus = document.querySelector("#health");
 let hitStatus = document.querySelector("#hits");
 
+// function reset() {
 let target = {
   playerHealth: 100,
   numberOfHits: 0,
@@ -12,6 +13,8 @@ let target = {
   },
   items: []
 }
+// return;
+// }
 
 let items = {
   stick: { name: 'Stick', modifier: 1, description: 'It pokes!' },
@@ -67,9 +70,25 @@ function addMods() {
   return modifier;
 }
 
+function reset() {
+  target.playerHealth = 100
+  target.numberOfHits = 0
+  for (let i = 0; i < target.items.length; i++) {
+    target.items.pop;
+  }
+  // target.items = []
+  update()
+  return;
+}
+
 function update() {
-  healthStatus.innerHTML = target.playerHealth.toString()
-  hitStatus.innerHTML = target.numberOfHits.toString()
+  if (target.playerHealth > 0) {
+    healthStatus.innerHTML = target.playerHealth.toString();
+    hitStatus.innerHTML = target.numberOfHits.toString();
+  } else {
+    alert("Fatality!");
+    reset();
+  }
   return;
 }
 
